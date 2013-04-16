@@ -65,6 +65,8 @@ if &t_Co > 22 || has("gui_running")
     :highlight Constant term=bold ctermfg=red  guifg=cyan
 endif
 
+set bg=dark
+
 :set nowrap
 :set nowrapscan
 
@@ -73,7 +75,7 @@ set list
 set nowrap
 set expandtab
 
-set listchars=tab:.\ ,eol:¬,trail:·,nbsp:·
+set listchars=tab:.\ ,eol:ï¿½,trail:ï¿½,nbsp:ï¿½
 
 if has ("autocmd")
   filetype plugin indent on
