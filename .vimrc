@@ -65,7 +65,7 @@ if &t_Co > 22 || has("gui_running")
     :highlight Constant term=bold ctermfg=red  guifg=cyan
 endif
 
-set bg=dark
+" set bg=dark
 
 :set nowrap
 :set nowrapscan
