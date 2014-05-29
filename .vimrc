@@ -75,7 +75,7 @@ set list
 set nowrap
 set expandtab
 
-set listchars=tab:.\ ,eol:�,trail:�,nbsp:�
+set listchars=tab:.\ ,eol:¬,trail:»,nbsp:•
 
 if has ("autocmd")
   filetype plugin indent on
