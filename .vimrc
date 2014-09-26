@@ -61,7 +61,7 @@ endif
 if &t_Co > 22 || has("gui_running")
     :syntax on
     :highlight Comment  term=bold ctermfg=cyan guifg=cyan
-    :highlight Special  term=bold ctermfc=cyan guifg=cyan
+    :highlight Special  term=bold ctermfg=cyan guifg=cyan
     :highlight Constant term=bold ctermfg=red  guifg=cyan
 endif
 
