@@ -1,0 +1,21 @@
+# OS X path and architecture
+if [ `uname` == 'Darwin' ] ; then
+    # Set architecture flags
+    export ARCHFLAGS="-arch x86_64"
+
+    # set path to use brew utils (more up-to-date than OS X system utils)
+    # can be done in /etc/paths if needed system-wide
+    # check if path already begins with /usr/local/bin
+    echo $PATH | grep -q -s "^/usr/local/bin"
+    # if not, update path
+    if [ $? -eq 1 ] ; then
+        PATH=/usr/local/bin:$PATH
+    export PATH
+    fi
+fi
+
+# if running bash
+if [ -n "$BASH_VERSION" ]; then
+  # Load .bashrc if it exists
+  test -f "$HOME/.bashrc" && source "$HOME/.bashrc"
+fi
