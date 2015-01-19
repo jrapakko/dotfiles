@@ -11,7 +11,11 @@ if [[ $uname[0,6] == 'Darwin' ]]; then
   alias vim=mvim
   # -G not colors on many OSes
   alias ll='ls -GFlash'
-elif [[ $uname[0,6] == 'CYGWIN']]; then
+# Cygwin aliases
+elif [[ $uname[0,6] == 'CYGWIN' ]]; then
+  alias ll='ls -Flash --color=always'
+# Default
+else
   alias ll='ls -Flash --color=always'
 fi
 
