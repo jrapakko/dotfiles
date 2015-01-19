@@ -14,6 +14,9 @@ if [[ $uname[0,6] == 'Darwin' ]]; then
 # Cygwin aliases
 elif [[ $uname[0,6] == 'CYGWIN' ]]; then
   alias ll='ls -Flash --color=always'
+# Fedora shows up as "Linux"
+elif [[ $uname[0,5] == 'Linux' ]]; then
+  alias ll='ls -Flash --color=always'
 # Default
 else
   alias ll='ls -Flash --color=always'
