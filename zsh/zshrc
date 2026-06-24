@@ -3,45 +3,31 @@ if [[ $(uname) == 'Darwin' ]]; then
   fpath=(/usr/local/share/zsh-completions $fpath)
 fi
 
-# The following lines were added by compinstall
-
-zstyle ':completion:*' auto-description 'specify: %d'
-zstyle ':completion:*' file-sort name
-zstyle ':completion:*' format 'Completing %d'
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*' ignore-parents parent pwd .. directory
-zstyle ':completion:*' insert-unambiguous true
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-zstyle ':completion:*' menu select=0
-zstyle ':completion:*' original true
-zstyle ':completion:*' preserve-prefix '//[^/]##/'
-zstyle ':completion:*' select-prompt $SScrolling active: current selection at %p%s
-zstyle ':completion:*' squeeze-slashes true
-zstyle ':completion:*' verbose true
-zstyle :compinstall filename '/Users/jrapakko/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-setopt appendhistory
-unsetopt beep
-bindkey -v
+setopt autocd nomatch notify
+unsetopt extendedglob
+bindkey -e
 # End of lines configured by zsh-newuser-install
 
+# The following lines were added by compinstall
+
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|[._-]=** r:|=** l:|=*'
+zstyle ':completion:*' use-compctl false
+zstyle :compinstall filename '/home/jrpko/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
 
 # Paths
 #
 if [[ $(uname) == 'Darwin' ]]; then
-  # path vars
-
   # ls colors
   export LSCOLORS=GxFxCxDxBxegedabagaced
-
 
   # set path to use brew utils (more up-to-date than OS X system utils)
   # can be done in /etc/paths if needed system-wide
@@ -53,6 +39,9 @@ if [[ $(uname) == 'Darwin' ]]; then
   fi
 fi
 
-
-# Aliases
-source $HOME/.zsh/aliases.zsh
+# Source files in ~/.zshrc.d
+if [ -d "$HOME/.zshrc.d" ]; then
+    for file in "$HOME/.zshrc.d"/*; do
+        [ -f "$file" ] && source "$file"
+    done
+fi
