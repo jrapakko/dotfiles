@@ -21,5 +21,3 @@ elif [[ $uname[0,5] == 'Linux' ]]; then
 else
   alias ll='ls -Flash --color=always'
 fi
-
-alias frankly='cd $HOME/frankly'
