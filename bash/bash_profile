@@ -1,7 +1,5 @@
 # OS X path and architecture
 if [ `uname` == 'Darwin' ] ; then
-    # Set architecture flags
-    export ARCHFLAGS="-arch x86_64"
 
     # set path to use brew utils (more up-to-date than OS X system utils)
     # can be done in /etc/paths if needed system-wide

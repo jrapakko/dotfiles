@@ -1,3 +1,0 @@
-alias ll='ls -laF'
-alias rm='rm -i'
-alias cs='cd;ls'
