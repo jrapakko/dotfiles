@@ -4,10 +4,8 @@ echo "=============Begin Installation =============="
 
 linkdot() {
     rc="$PWD/$1"
-    echo $rc
     # we only support the files in the first child dir as dotfiles
     rcshort=$(awk -v col="$2" -F / '{print $col}' <(ls -Ad $rc))
-    echo $rcshort
     if [[ ${rcshort:0:1} = '.' ]]
     then
         rcshort="$HOME/$rcshort"
@@ -16,7 +14,7 @@ linkdot() {
     fi
     echo "linking $rc as $rcshort"
     # check if file exists and then delete
-    if [[ -f $rcshort ]]
+    if [[ -f $rcshort || -d $rcshort ]]
     then
         # recurse as we support directories
         rm -r $rcshort
