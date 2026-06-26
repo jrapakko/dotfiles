@@ -1,19 +1,22 @@
-# PS1 # TODO: fix this file to look cleaner this is gross
-
-# LETS ADD COLOR (ty gemini)
-export PS1="\[\033[1;92m\]\u\[\033[0m\]@\[\033[38;5;208m\]\h\[\033[0m\]:\w\$ "
-
 #For OSX
 if [ `uname` == 'Darwin' ]
 then
     #command line colors & ls colors
     export CLICOLOR=1
     export LSCOLORS=GxFxCxDxBxegedabagaced
+    LSCOLORS="$LSCOLORS:di=38;5;208"
     #bash completion through brew. Hopefully this is installed!
     if [ -f $(brew --prefix)/etc/bash_completion ]; then
         . $(brew --prefix)/etc/bash_completion
     fi
 fi
+
+# PS1 # TODO: fix this file to look cleaner this is gross
+
+# LETS ADD COLOR (ty gemini)
+export PS1="\[\033[1;92m\]\u\[\033[0m\]@\[\033[38;5;208m\]\h\[\033[0m\]:\w\$ "
+# more readable dirs (blue disappears on a black background)
+export LS_COLORS="$LS_COLORS:di=38;5;208"
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then

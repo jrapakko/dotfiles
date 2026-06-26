@@ -28,6 +28,7 @@ compinit
 if [[ $(uname) == 'Darwin' ]]; then
   # ls colors
   export LSCOLORS=GxFxCxDxBxegedabagaced
+  LSCOLORS="$LSCOLORS::di=38;5;208"
 
   # set path to use brew utils (more up-to-date than OS X system utils)
   # can be done in /etc/paths if needed system-wide
