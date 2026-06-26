@@ -14,7 +14,7 @@ fi
 # PS1 # TODO: fix this file to look cleaner this is gross
 
 # LETS ADD COLOR (ty gemini)
-export PS1="\[\033[1;92m\]\u\[\033[0m\]@\[\033[38;5;208m\]\h\[\033[01;34m\]:\w\[\033[0m\\]\$ "
+export PS1="\[\033[1;92m\]\u\[\033[0m\]@\[\033[38;5;208m\]\h\[\033[0m\]:\\[\033[01;34m\]\w\[\033[0m\\]\$ "
 # more readable dirs (blue disappears on a black background)
 export LS_COLORS="$LS_COLORS:di=38;5;208"
 
