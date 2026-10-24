@@ -1,3 +1,8 @@
 alias ll='ls -laF'
-alias rm='rm -i'
 alias cs='cd;ls'
+
+# interactive only so as not to interfere with agents
+if [[ $- == *i* ]]
+then
+    alias rm='rm -i'
+fi
