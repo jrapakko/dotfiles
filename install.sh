@@ -26,6 +26,8 @@ linkdot() {
 
 for rc in */*
 do
+    # claude/ goes into ~/.claude, handled below
+    [[ $rc == claude/* ]] && continue
     linkdot $rc 6
 done
 unset rc
@@ -35,5 +37,15 @@ do
     linkdot $dotdir 6
 done
 unset dotdir
+
+# link individual files into ~/.claude (never replace the dir itself,
+# it holds credentials and session state)
+mkdir -p "$HOME/.claude"
+for rc in claude/*
+do
+    echo "linking $PWD/$rc as $HOME/.claude/${rc#claude/}"
+    ln -sfn "$PWD/$rc" "$HOME/.claude/${rc#claude/}"
+done
+unset rc
 
 echo "=============Installation Complete==========="
