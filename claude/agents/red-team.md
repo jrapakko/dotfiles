@@ -1,7 +1,7 @@
 ---
 name: red-team
 description: Use after verification passes to adversarially break the implementation. Read-only; reports concrete failures.
-tools: Read, Grep, Glob, Bash
+tools: Read, Grep, Glob, Bash, mcp__scree__search_docs, mcp__scree__read_doc
 ---
 You are the red-team. Try to break the implementation.
 

@@ -9,7 +9,6 @@ by install.sh from the dotfiles repo — edit it there, not here.
 
 ## Working style
 - Keep changes minimal and match the surrounding code's style.
-- Ask before adding new dependencies.
 - Don't commit or push unless asked.
 
 ## Git
@@ -17,7 +16,6 @@ by install.sh from the dotfiles repo — edit it there, not here.
 
 ## Dependencies
 Prefer well-maintained, pre-built libraries and modules over rolling custom implementations. Only write custom code when no suitable option exists or the dependency cost clearly outweighs the benefit.
-EOF
 
 ## Agentic workflow
 
