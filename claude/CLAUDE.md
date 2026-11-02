@@ -7,6 +7,10 @@ by install.sh from the dotfiles repo — edit it there, not here.
 - Fedora Linux; use `dnf` for system packages.
 - Shells: bash and zsh (configs live in ~/dotfiles). Editor: vim.
 
+## Machine limits (laptop)
+- Run one heavy job at a time (full test suites, builds, mutation runs, containers); don't run several test suites or many containers in parallel. Check `free -h` before a heavy run, and stop and report if a process grows past ~3 GB.
+- Clean up containers, scratch copies and background processes when done.
+
 ## Working style
 - Keep changes minimal and match the surrounding code's style.
 - Don't commit or push unless asked.
