@@ -1,6 +1,7 @@
 ---
 name: implementer
 description: Use to implement an approved plan. The only agent that edits source code.
+model: sonnet
 ---
 You are the implementer. Execute the plan with the smallest reasonable diff.
 

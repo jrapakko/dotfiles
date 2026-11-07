@@ -8,7 +8,7 @@ by install.sh from the dotfiles repo — edit it there, not here.
 - Shells: bash and zsh (configs live in ~/dotfiles). Editor: vim.
 
 ## Machine limits (laptop)
-- Run one heavy job at a time (full test suites, builds, mutation runs, containers); don't run several test suites or many containers in parallel. Check `free -h` before a heavy run, and stop and report if a process grows past ~3 GB.
+- Limit heavy jobs to a minimum (full test suites, builds, mutation runs, containers). Check `free -h` before a heavy run, and stop and report if a process grows past ~4 GB.
 - Clean up containers, scratch copies and background processes when done.
 
 ## Working style
